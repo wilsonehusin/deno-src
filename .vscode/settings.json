@@ -3,5 +3,5 @@
   "deno.lint": true,
   "deno.unstable": true,
   "deno.path": "./bin/deno",
-  "deno.importMap": "./vendor/import_map.json"
+  "deno.importMap": "./import_map.json"
 }
