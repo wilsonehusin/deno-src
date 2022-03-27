@@ -1,3 +1,10 @@
 # Development binaries
 bin/
 !bin/.keep
+
+# Development secrets
+secrets.sh
+
+# Scratch directory
+tmp/
+!tmp/.keep

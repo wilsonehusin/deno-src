@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "std/": "./vendor/deno.land/std@0.132.0/"
+  }
+}

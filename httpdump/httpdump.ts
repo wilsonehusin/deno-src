@@ -1,7 +1,5 @@
-// @ts-ignore(2691)
-import { serve } from "https://deno.land/std@0.132.0/http/server.ts";
-// @ts-ignore(2691)
-import { VERSION } from "https://deno.land/std@0.132.0/version.ts";
+import { serve } from "std/http/server.ts";
+import { VERSION } from "std/version.ts";
 
 const defaultHeaders: Record<string, string> = {
   "content-type": "application/json",

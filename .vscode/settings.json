@@ -1,0 +1,7 @@
+{
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.unstable": true,
+  "deno.path": "./bin/deno",
+  "deno.importMap": "./vendor/import_map.json"
+}

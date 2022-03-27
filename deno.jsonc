@@ -1,0 +1,11 @@
+{
+  "fmt": {
+    "files": {
+      "exclude": [
+        "./vendor",
+        "./tmp"
+      ]
+    }
+  },
+  "importMap": "./import_map.json"
+}
