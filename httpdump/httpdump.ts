@@ -29,6 +29,11 @@ async function handler(request: Request): Promise<Response> {
     headers["x-deno-ts"] = Deno.version.typescript;
   }
 
+  const region = Deno.env.get("DENO_REGION")
+  if (region != undefined && region != "") {
+    headers["x-deno-region"] = region
+  }
+
   return new Response(JSON.stringify(req), { headers });
 }
 
