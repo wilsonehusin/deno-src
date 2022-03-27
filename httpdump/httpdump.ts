@@ -34,7 +34,7 @@ async function handler(request: Request): Promise<Response> {
     headers["x-deno-region"] = region
   }
 
-  return new Response(JSON.stringify(req), { headers });
+  return new Response(JSON.stringify(req) + "\n", { headers });
 }
 
 console.log("Listening on http://localhost:8000");
