@@ -1,0 +1,19 @@
+platforms:
+  darwin:
+    - arm64
+    - amd64
+
+programs:
+  - name: deno
+    version: 1.20.3
+    provider: url
+    path: https://github.com/denoland/deno/releases/download/v{{ .Version }}/{{ .Name }}-{{ .Arch }}-{{ .OS }}.zip
+    overlay:
+      OS:
+        darwin: apple-darwin
+      Arch:
+        amd64: x86_64
+        arm64: aarch64
+    checksums:
+      deno-aarch64-apple-darwin.zip: 380930f8c72080fb1bb4d8d785b5741a5fdfa0a1c2cfc08715ad710df58e143a
+      deno-x86_64-apple-darwin.zip: 05d198385de5318fe4e16448db90be607fc9cbecd30d1a442b9949e5709c12ad
