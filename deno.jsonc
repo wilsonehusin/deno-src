@@ -1,4 +1,12 @@
 {
+  "lint": {
+    "files": {
+      "exclude": [
+        "./vendor",
+        "./tmp"
+      ]
+    }
+  },
   "fmt": {
     "files": {
       "exclude": [
