@@ -45,5 +45,5 @@ function buildTree(tree: VersionTree, release: GitHubRelease): VersionTree {
   }
   key += "]";
 
-  return _.setWith(tree, key, release, Object);
+  return _.setWith(tree, key, {"_release": release}, Object);
 }

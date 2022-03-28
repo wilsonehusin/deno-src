@@ -28,12 +28,12 @@ Get all releases leveled with semantic versioning.
   "1": {
     "20": {
       "4": {
-        "_self": {
+        "_release": {
           "id": "42"
         },
         "beta": {
           "1": {
-            "_self": {
+            "_release": {
               "id": "41"
             }
           }
