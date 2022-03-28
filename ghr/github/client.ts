@@ -15,6 +15,7 @@ export async function getReleases({
     logger.error({ path, msg: "malformed path, expected: owner/repo" });
     return [];
   }
+  path = normalizePath(path);
   const p = {
     per_page: per_page.toString(),
     page: page.toString(),
@@ -89,7 +90,6 @@ export async function getReleases({
   });
 
   logger.debug({ url, fromCache: false });
-
   return result;
 }
 
@@ -139,6 +139,15 @@ interface GitHubResponse {
 interface CacheEntry {
   etag: string;
   releases: GitHubRelease[];
+}
+
+function normalizePath(path: string): string {
+  let result = path;
+  if (result.charAt(0) == "/") result = result.slice(1);
+  if (result.charAt(result.length - 1) == "/") {
+    result = result.slice(0, result.length - 1);
+  }
+  return result;
 }
 
 async function cacheGet(key: string): Promise<CacheEntry> {
