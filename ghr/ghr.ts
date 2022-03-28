@@ -55,7 +55,7 @@ async function handler(request: Request): Promise<Response> {
   const url = new URL(request.url);
   const releases = await getReleases({ path: url.pathname });
   const versionTree = releasesVersionTree(releases);
-  return new Response(JSON.stringify(versionTree));
+  return new Response(JSON.stringify(versionTree), { headers });
 }
 
 log.info({ port: 8000 });
