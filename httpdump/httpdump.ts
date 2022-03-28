@@ -11,11 +11,11 @@ if (Deno.version !== undefined) {
   headers["x-deno-ts"] = Deno.version.typescript;
 }
 
-headers["x-deno-std"] = VERSION
+headers["x-deno-std"] = VERSION;
 
-const region = Deno.env.get("DENO_REGION")
+const region = Deno.env.get("DENO_REGION");
 if (region) {
-  headers["x-deno-region"] = region
+  headers["x-deno-region"] = region;
 }
 
 async function handler(request: Request): Promise<Response> {

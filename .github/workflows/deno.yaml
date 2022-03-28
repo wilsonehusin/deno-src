@@ -27,6 +27,8 @@ jobs:
         include:
           - name: "httpdump"
             entrypoint: "./httpdump/httpdump.ts"
+          - name: "ghr"
+            entrypoint: "./ghr/ghr.ts"
     name: Deploy
     runs-on: ubuntu-latest
     permissions:
