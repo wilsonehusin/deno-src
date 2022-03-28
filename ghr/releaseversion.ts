@@ -4,14 +4,7 @@ import "lodash/dist/lodash.min.js";
 const _ = (self as any)._;
 
 export type VersionTree = {
-  [key: string]: VersionTree | Release | Record<never, never>;
-};
-
-export type Release = {
-  version: string;
-  host: string;
-  path: string;
-  id: string;
+  [key: string]: VersionTree | GitHubRelease;
 };
 
 export function releasesVersionTree(releases: GitHubRelease[]): VersionTree {
@@ -45,5 +38,5 @@ function buildTree(tree: VersionTree, release: GitHubRelease): VersionTree {
   }
   key += "]";
 
-  return _.setWith(tree, key, {"_release": release}, Object);
+  return _.setWith(tree, key, { "_release": release }, Object);
 }
