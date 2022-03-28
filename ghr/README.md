@@ -1,4 +1,4 @@
-# `ghr` — GitHub Releases
+# `ghr` — GitHub Releases ([live](https://ghr.deno.dev/kubernetes/kubernetes))
 
 `ghr` is an API that assumes GitHub releases to be semantic versioned, returning
 releases in a tree of `major`.`minor`.`patch`.
