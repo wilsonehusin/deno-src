@@ -1,11 +1,11 @@
 programs:
 - checksums:
     deno-aarch64-apple-darwin.zip:
-      _archive: 380930f8c72080fb1bb4d8d785b5741a5fdfa0a1c2cfc08715ad710df58e143a
-      deno: 05fec425804ed585a35f99b104083ed1042c1e146960326ba89234bf51eef0bf
-    deno-x86_64-apple-darwin.zip:
-      _archive: 05d198385de5318fe4e16448db90be607fc9cbecd30d1a442b9949e5709c12ad
-      deno: e6dad72e552bd7fe3c7b63b50fac2a6b34d7e7bbcbb422c9097ad976eb77a0f8
+      archive: 380930f8c72080fb1bb4d8d785b5741a5fdfa0a1c2cfc08715ad710df58e143a
+      binary: 05fec425804ed585a35f99b104083ed1042c1e146960326ba89234bf51eef0bf
+    deno-x86_64-unknown-linux-gnu.zip:
+      archive: afc42aa493b171f5be23c9bdbace45ee558fcfd8451e184a813999e8e61e576e
+      binary: a5cd0cddf521052d5235babfa91f6a4bd8ae569eca3d9d9cb9b5c0b8622e2520
   name: deno
   overlay:
     Arch:
@@ -13,6 +13,7 @@ programs:
       arm64: aarch64
     OS:
       darwin: apple-darwin
+      linux: unknown-linux-gnu
   url: https://github.com/denoland/deno/releases/download/v{{ .Version }}/{{ .Name }}-{{ .Arch }}-{{ .OS }}.zip
   version: 1.20.3
-updated: "2022-03-26T23:32:23.740748Z"
+updated: "2022-04-03T19:26:13.393807904Z"

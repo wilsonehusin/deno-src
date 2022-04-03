@@ -1,6 +1,7 @@
 # Development binaries
 bin/
 !bin/.keep
+.direnv/
 
 # Development secrets
 secrets.sh
