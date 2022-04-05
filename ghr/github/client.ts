@@ -1,6 +1,6 @@
 import { join } from "std/path/mod.ts";
 import * as log from "std/log/mod.ts";
-import { connect, parseURL } from "redis/mod.ts";
+import { connect, parseURL } from "x/redis/mod.ts";
 
 const redis = await connect(parseURL(Deno.env.get("REDIS_URL") || ""));
 

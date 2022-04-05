@@ -1,5 +1,5 @@
 import { GitHubRelease } from "./github/mod.ts";
-import "lodash/dist/lodash.min.js";
+import "x/lodash/dist/lodash.min.js";
 // deno-lint-ignore no-explicit-any
 const _ = (self as any)._;
 

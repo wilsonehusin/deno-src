@@ -1,7 +1,7 @@
 {
   "imports": {
     "std/": "https:/deno.land/std@0.132.0/",
-    "redis/": "https:/deno.land/x/redis@v0.25.4/",
-    "lodash/": "https:/deno.land/x/lodash@4.17.19/"
+    "x/redis/": "https:/deno.land/x/redis@v0.25.4/",
+    "x/lodash/": "https:/deno.land/x/lodash@4.17.19/"
   }
 }
