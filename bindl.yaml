@@ -6,9 +6,11 @@ platforms:
 
 programs:
   - name: deno
-    version: 1.20.3
-    provider: url
-    path: https://github.com/denoland/deno/releases/download/v{{ .Version }}/{{ .Name }}-{{ .Arch }}-{{ .OS }}.zip
+    version: 1.20.6
+    provider: github
+    paths:
+      base: denoland/deno
+      target: '{{ .Name }}-{{ .Arch }}-{{ .OS }}.zip'
     overlay:
       OS:
         linux: unknown-linux-gnu
@@ -17,5 +19,5 @@ programs:
         amd64: x86_64
         arm64: aarch64
     checksums:
-      deno-x86_64-unknown-linux-gnu.zip: afc42aa493b171f5be23c9bdbace45ee558fcfd8451e184a813999e8e61e576e
-      deno-aarch64-apple-darwin.zip: 380930f8c72080fb1bb4d8d785b5741a5fdfa0a1c2cfc08715ad710df58e143a
+      deno-x86_64-unknown-linux-gnu.zip: de431f73a31fe7cac969c5e1088174a47263b23c70ebf5f690488eccfd61b62c
+      deno-aarch64-apple-darwin.zip: b1e9f251ac9e709e97a5b892ef3c0b696896338aa8d9764d45befed9295a75fb
