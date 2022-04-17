@@ -35,6 +35,8 @@ async function handler(request: Request): Promise<Response> {
     body: await request.text(),
   };
 
+  console.log(req)
+
   return new Response(JSON.stringify(req) + "\n", { headers });
 }
 

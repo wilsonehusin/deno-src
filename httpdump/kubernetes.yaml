@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: httpdump
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: httpdump
+  namespace: httpdump
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpdump
+  namespace: httpdump
+  labels:
+    app: httpdump
+    service: httpdump
+spec:
+  ports:
+    - name: http
+      port: 8000
+  selector:
+    app: httpdump
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpdump
+  namespace: httpdump
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: httpdump
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: httpdump
+        version: v1
+    spec:
+      serviceAccountName: httpdump
+      containers:
+      - image: ghcr.io/wilsonehusin/httpdump:latest
+        imagePullPolicy: Always
+        name: httpdump
+        ports:
+        - containerPort: 8000
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: httpdump
+  namespace: httpdump
+spec:
+  rules:
+    - host: httpdump.xargs.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: httpdump
+                port:
+                  name: http

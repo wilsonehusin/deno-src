@@ -1,0 +1,6 @@
+FROM docker.io/denoland/deno:distroless
+
+WORKDIR /app
+COPY import_map.json .
+COPY httpdump/httpdump.ts .
+CMD ["run", "--allow-env", "--allow-net", "--import-map", "./import_map.json", "./httpdump.ts"]
